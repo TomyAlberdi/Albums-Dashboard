@@ -13,6 +13,7 @@ header.Navbar {
             @include var.flex-container(column,space-evenly,left);
             span {
                 font-size: 1.2rem;
+                font-weight: 300;
             }
         }
         i {

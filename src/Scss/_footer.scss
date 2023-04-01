@@ -1,6 +1,10 @@
 @use './var';
 
 footer.Footer {
-    border: 1px solid red;
+    background-color: rgba(0, 0, 0, 0.3);
     height: 5vh;
+    @include var.flex-container(row,center,center);
+    h2 {
+        font-weight: 300;
+    }
 }
