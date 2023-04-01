@@ -67,12 +67,44 @@ html {
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
-
+    html {
+        body {
+            div.App {
+                main {
+                    .Albums, .Artists, .Tracks {
+                        section.content {
+                            justify-content: space-between;
+                            article {
+                                height: 30vh;
+                                width: 47%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
-
+    html {
+        body {
+            div.App {
+                main {
+                    .Albums, .Artists, .Tracks {
+                        section.content {
+                            justify-content: space-between;
+                            article {
+                                height: 28vh;
+                                width: 31.5%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 @-webkit-keyframes animacion_loading {
