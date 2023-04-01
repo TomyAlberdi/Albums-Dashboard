@@ -1,19 +1,66 @@
 @use "./var";
 
 section.Albums {
-    
+    min-height: inherit;
+    section.filter {
+        height: 11vh;
+        border: 1px solid green;
+    }
+    section.content {
+        padding: 3vh;
+        @include var.flex-container(row,left,center);
+        flex-wrap: wrap;
+        gap: 1%;
+    }
+    h2.loadingMsg {
+        font-size: 2rem;
+        padding: 1vh 3vh;
+        background-color: var.$sec;
+        width: fit-content;
+        box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
+        border-radius: 5px;
+        -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
+        animation: animacion_loading 1.5s ease-in-out infinite both;
+    }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
     section.Albums {
-
+        section.content {
+            justify-content: space-between;
+        }
     }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
     section.Albums {
+        section.content {
+            justify-content: space-between;
+        }
+    }
+}
 
+@-webkit-keyframes animacion_loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes animacion_loading {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
     }
 }
