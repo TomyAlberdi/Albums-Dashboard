@@ -4,6 +4,11 @@ header.Navbar {
     height: 11vh;    
     @include var.flex-container(row,space-between,center);
     background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    z-index: 11;
+    position: fixed;
+    top: 0;
+    width: 100%;
     div.links {
         @include var.flex-container(row,center,center);
         height: inherit;

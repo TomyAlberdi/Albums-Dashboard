@@ -1,1 +1,19 @@
 @use "./var";
+
+article.Album {
+    
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    article.Album {
+
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    article.Album {
+
+    }
+}

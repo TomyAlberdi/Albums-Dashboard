@@ -19,10 +19,11 @@ html {
     scroll-behavior: smooth;
     user-select: none;
     body {
+        background-color: var.$prim;
         div.App {
-            background-color: var.$prim;
             main {
                 min-height: 84vh;
+                margin-top: 11vh;
                 .Albums, .Artists, .Tracks {
                     min-height: inherit;
                     section.filter {
