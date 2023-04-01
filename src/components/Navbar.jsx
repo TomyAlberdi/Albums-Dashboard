@@ -9,9 +9,6 @@ const Navbar = () => {
                     <Link to={'/Albums-Dashboard/'}>Albums</Link>
                 </div>
                 <div className="navLinks">
-                    <Link to={'/Albums-Dashboard/Artists'}>Artists</Link>
-                </div>
-                <div className="navLinks">
                     <Link to={'/Albums-Dashboard/Tracks'}>Tracks</Link>
                 </div>
             </div>

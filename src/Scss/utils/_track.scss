@@ -1,0 +1,19 @@
+@use "../var";
+
+article.Track {
+
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    article.Track {
+    
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    article.Track {
+    
+    }
+}
