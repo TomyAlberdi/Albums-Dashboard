@@ -1,9 +1,14 @@
 import React from 'react'
 
-const Tracks = () => {
+const Tracks = ({BASE_URL,API_KEY}) => {
     return (
         <section className="Tracks">
-            <h2>Tracks</h2>
+            <section className="filter">
+                <h2>Filter</h2>
+            </section>
+            <section className="content">
+                <h2>Tracks</h2>
+            </section>
         </section>
     )
 }

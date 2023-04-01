@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const Albums = () => {
+const Albums = ({BASE_URL,API_KEY}) => {
     return (
         <section className='Albums'>
-            <h2>Albums</h2>
+            <section className="filter">
+                <h2>Filter</h2>
+            </section>
+            <section className="content">
+                <h2>Albums</h2>
+            </section>
         </section>
     )
 }

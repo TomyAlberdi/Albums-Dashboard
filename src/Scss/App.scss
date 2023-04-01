@@ -1,6 +1,9 @@
 @use "./var";
 @use "./navbar";
 @use "./footer";
+@use "./albums";
+@use "./artists";
+@use "./tracks";
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap');
 
 * {
@@ -19,6 +22,16 @@ html {
             background-color: var.$prim;
             main {
                 min-height: 84vh;
+                .Albums, .Artists, .Tracks {
+                    min-height: inherit;
+                    section.filter {
+                        height: 11vh;
+                        border: 1px solid green;
+                    }
+                    section.content {
+                        padding: 3vh;
+                    }
+                }
             }
         }
     }
