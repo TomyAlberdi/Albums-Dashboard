@@ -3,8 +3,17 @@
 section.Albums {
     min-height: inherit;
     section.filter {
-        height: 11vh;
-        border: 1px solid green;
+        padding: 3vh 3vh 0 3vh;
+        select {
+            background-color: var.$sec;
+            width: 20vw;
+            border: none;
+            padding: 1vw;
+            border-radius: 10px;
+            border-right: 16px solid transparent;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
     }
     section.content {
         padding: 3vh;
