@@ -10,7 +10,7 @@ const Albums = ({BASE_URL,API_KEY}) => {
     const [LoadingData, setLoadingData] = useState(true)
     useEffect(() => {
         const fetchData = async () => {
-            fetch(`${BASE_URL}/${METHOD}&${API_KEY}&format=json&${PERIOD}&limit=20`)
+            fetch(`${BASE_URL}/${METHOD}&${API_KEY}&format=json&${PERIOD}&limit=18`)
             .then(res => res.json())
             .then(data => {
                 setData(data.topalbums.album)

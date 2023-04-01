@@ -1,19 +1,44 @@
 @use "./var";
 
 article.Album {
-    
+    section.data {
+        h2,h3 {
+            width: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        h2 {
+            font-size: 1.2rem;
+        }
+        h3 {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
     article.Album {
-
+        section.data {
+            h2 {
+                font-size: 1.05rem;
+            }
+            h3 {
+                font-size: 0.9rem;
+            }
+        }
     }
 }
 
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
     article.Album {
-
+        section.data {
+            h2 {
+                font-size: 1.3rem;
+            }
+        }
     }
 }
