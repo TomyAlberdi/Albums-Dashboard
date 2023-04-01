@@ -5,22 +5,33 @@ header.Navbar {
     @include var.flex-container(row,space-between,center);
     background-color: rgba(0, 0, 0, 0.3);
     div.links {
+        @include var.flex-container(row,center,center);
         height: inherit;
-        @include var.flex-container(row,left,center);
-        a {
-            @include var.flex-container(row,center,center);
+        div.navLinks {
             height: inherit;
-            text-decoration: none;
-            font-size: 1.6rem;
-            font-weight: 300;
+            @include var.flex-container(row,center,center);
             padding: 0 5vh;
-            transition: all 0.3s ease-in-out;
-            &:hover {
+            a {
+                display: inline-block;
+                text-decoration: none;
+                &::after {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 2px;
+                    background: var.$acc;
+                    transition: all 0.25s ease-in-out;
+                }
+                &:hover::after {
+                    transition: all 0.3s ease-in-out;
+                    width: 100%;
+                }
+                font-size: 1.6rem;
+                font-weight: 300;
                 transition: all 0.3s ease-in-out;
-                background-color: rgba(0, 0, 0, 0.3);            
             }
         }
-    }
+    }   
     div.iconContainer {
         @include var.flex-container(row,center,center);
         height: inherit;
@@ -43,9 +54,11 @@ header.Navbar {
 @media screen and (max-width: 765px) {
     header.Navbar {
         div.links {
-            a {
+            div.navLinks {
                 padding: 0 3vw;
-                font-size: 1.4rem;
+                a {
+                    font-size: 1.4rem;
+                }
             }
         }
     }
