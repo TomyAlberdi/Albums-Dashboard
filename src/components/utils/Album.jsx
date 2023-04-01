@@ -4,7 +4,11 @@ const Album = ({data}) => {
     return (
         <article className="Album">
             <section className="img">
-                <img src={data.image[3]["#text"]} alt="Album Image" />
+                {
+                    data.image[3]["#text"].length > 0 ? 
+                        <img src={data.image[3]["#text"]} alt="Album Image" />
+                    : <img src="https://www.iphonefaq.org/files/styles/large/public/apple_music.jpg" alt="Album Image" />
+                }
             </section>
             <section className="data">
                 <h2>{data.name}</h2>
