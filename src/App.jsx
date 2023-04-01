@@ -2,7 +2,6 @@ import './Scss/App.scss'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Albums from './components/pages/Albums';
-import Tracks from './components/pages/Tracks';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
             <main>
                 <Routes>
                     <Route path='/Albums-Dashboard' element= { <Albums BASE_URL={BASE_URL} API_KEY={API_KEY} />} />
-                    <Route path='/Albums-Dashboard/Tracks' element={ <Tracks BASE_URL={BASE_URL} API_KEY={API_KEY} />} />
                 </Routes>
             </main>
             <Footer />
