@@ -1,0 +1,12 @@
+import './Scss/App.scss'
+
+function App() {
+
+    return (
+        <div className="App">
+            <h1>eu</h1>
+        </div>
+    )
+}
+
+export default App
