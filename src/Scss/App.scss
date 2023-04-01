@@ -4,6 +4,7 @@
 @use "./albums";
 @use "./artists";
 @use "./tracks";
+@use "./album";
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap');
 
 * {
@@ -30,13 +31,29 @@ html {
                     }
                     section.content {
                         padding: 3vh;
+                        @include var.flex-container(row,left,center);
+                        flex-wrap: wrap;
+                        gap: 1%;
+                        article {
+                            margin: 0 0 2vh 0;
+                            height: 36vh;
+                            border-radius: 10px;
+                            width: 15.8%;
+                            border: 1px solid red;
+                            box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
+                            transition: 0.3s all ease-in-out;
+                            &:hover {
+                                transition: 0.3s all ease-in-out;
+                                transform: translateY(-3%);
+                            }
+                        }
                     }
                     h2.loadingMsg {
                         font-size: 2rem;
-                        padding: 3vh;
+                        padding: 1vh 3vh;
                         background-color: var.$sec;
                         width: fit-content;
-                        box-shadow: 0px 4px 4px 0px rgb(41, 41, 41);
+                        box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
                         border-radius: 5px;
                         -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
                         animation: animacion_loading 1.5s ease-in-out infinite both;
@@ -45,6 +62,16 @@ html {
             }
         }
     }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+
 }
 
 @-webkit-keyframes animacion_loading {
