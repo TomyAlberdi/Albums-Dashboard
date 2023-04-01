@@ -3,28 +3,21 @@
 header.Navbar {
     height: 11vh;    
     @include var.flex-container(row,space-between,center);
-    padding: 0 0 0 1vh;
     background-color: rgba(0, 0, 0, 0.3);
-    section.goTop {
+    div.links {
         height: inherit;
-        @include var.flex-container(row,space-between,center);
-        gap: 1vh;
-        div.text {
-            @include var.flex-container(column,space-evenly,left);
-            span {
-                font-size: 1.2rem;
-                font-weight: 300;
-            }
-        }
-        i {
-            font-size: 3rem;
+        @include var.flex-container(row,left,center);
+        a {
+            @include var.flex-container(row,center,center);
+            height: inherit;
+            text-decoration: none;
+            font-size: 1.6rem;
+            font-weight: 300;
+            padding: 0 5vh;
             transition: all 0.3s ease-in-out;
-        }
-        cursor: pointer;
-        &:hover {
-            transition: all 0.3s ease-in-out;
-            i {
-                transform: translateY(-1vh);
+            &:hover {
+                transition: all 0.3s ease-in-out;
+                background-color: rgba(0, 0, 0, 0.3);            
             }
         }
     }
@@ -44,4 +37,21 @@ header.Navbar {
             background-color: rgba(0, 0, 0, 0.3);            
         }
     }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    header.Navbar {
+        div.links {
+            a {
+                padding: 0 3vw;
+                font-size: 1.4rem;
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+
 }

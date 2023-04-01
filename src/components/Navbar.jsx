@@ -1,18 +1,16 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
  
 const Navbar = () => {
     return (
         <header className='Navbar'>
-            <section className="goTop">
-                <div className="text">
-                    <span>Go</span>
-                    <span>To</span>
-                    <span>Top</span>
-                </div>
-                <i className="fa-solid fa-chevron-up"></i>
-            </section>
+            <div className="links">
+                <Link to={'/Albums-Dashboard/'}>Albums</Link>
+                <Link to={'/Albums-Dashboard/Artists'}>Artists</Link>
+                <Link to={'/Albums-Dashboard/Tracks'}>Tracks</Link>
+            </div>
             <div className='iconContainer'>
-                <a href='http://tomas-alberdi.com' target={'_blank'}><img src="/favicon.ico" alt="Project Icon" /></a>
+                <Link to={'http://tomas-alberdi.com'} target={'_blank'}><img src="/favicon.ico" alt="Project Icon" /></Link>
             </div>
         </header>
     )
