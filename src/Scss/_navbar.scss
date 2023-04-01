@@ -1,6 +1,7 @@
 @use './var';
 
 header.Navbar {
+    padding: 0 0 0 1vh;
     height: 11vh;    
     @include var.flex-container(row,space-between,center);
     background-color: rgba(0, 0, 0, 0.3);
@@ -9,34 +10,28 @@ header.Navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    div.links {
-        @include var.flex-container(row,center,center);
+        section.goTop {
         height: inherit;
-        div.navLinks {
-            height: inherit;
-            @include var.flex-container(row,center,center);
-            padding: 0 5vh;
-            a {
-                display: inline-block;
-                text-decoration: none;
-                &::after {
-                    content: '';
-                    display: block;
-                    width: 0;
-                    height: 2px;
-                    background: var.$acc;
-                    transition: all 0.25s ease-in-out;
-                }
-                &:hover::after {
-                    transition: all 0.3s ease-in-out;
-                    width: 100%;
-                }
-                font-size: 1.6rem;
-                font-weight: 300;
-                transition: all 0.3s ease-in-out;
+        @include var.flex-container(row,space-between,center);
+        gap: 1vh;
+        div.text {
+            @include var.flex-container(column,space-evenly,left);
+            span {
+                font-size: 1.2rem;
             }
         }
-    }   
+        i {
+            font-size: 3rem;
+            transition: all 0.3s ease-in-out;
+        }
+        cursor: pointer;
+        &:hover {
+            transition: all 0.3s ease-in-out;
+            i {
+                transform: translateY(-1vh);
+            }
+        }
+    }
     div.iconContainer {
         @include var.flex-container(row,center,center);
         height: inherit;
@@ -52,25 +47,5 @@ header.Navbar {
             transition: all 0.3s ease-in-out;
             background-color: rgba(0, 0, 0, 0.3);            
         }
-    }
-}
-
-/* Query Mobile */
-@media screen and (max-width: 765px) {
-    header.Navbar {
-        div.links {
-            div.navLinks {
-                padding: 0 3vw;
-                a {
-                    font-size: 1.4rem;
-                }
-            }
-        }
-    }
-}
-
-/* Query Tablet */
-@media screen and (min-width: 766px) and (max-width: 1023px) {
-    header.Navbar {
     }
 }
