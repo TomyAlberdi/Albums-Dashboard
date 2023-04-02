@@ -4,15 +4,12 @@ section.Albums {
     min-height: inherit;
     section.filter {
         padding: 3vh 3vh 0 3vh;
-        select {
+        .custom-select {
+            width: 30%;
+            border-radius: 5px;
+        }
+        #react-select-3-listbox {
             background-color: var.$sec;
-            width: 20vw;
-            border: none;
-            padding: 1vw;
-            border-radius: 10px;
-            border-right: 16px solid transparent;
-            font-size: 1.1rem;
-            cursor: pointer;
         }
     }
     section.content {
@@ -20,22 +17,30 @@ section.Albums {
         @include var.flex-container(row,left,center);
         flex-wrap: wrap;
         gap: 1%;
-    }
-    h2.loadingMsg {
-        font-size: 2rem;
-        padding: 1vh 3vh;
-        background-color: var.$sec;
-        width: fit-content;
-        box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
-        border-radius: 5px;
-        -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
-        animation: animacion_loading 1.5s ease-in-out infinite both;
+        h2.loadingMsg {
+            font-size: 2rem;
+            width: 100%;
+            text-align: center;
+            padding: 1vh 3vh;
+            background-color: var.$sec;
+            box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
+            border-radius: 5px;
+            -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
+            animation: animacion_loading 1.5s ease-in-out infinite both;
+        }
     }
 }
 
 /* Query Mobile */
 @media screen and (max-width: 765px) {
     section.Albums {
+        section.filter {
+            .custom-select {
+                background-color: var.$sec;
+                width: 100%;
+                color: var.$white;
+            }
+        }
         section.content {
             justify-content: space-between;
         }
@@ -45,6 +50,13 @@ section.Albums {
 /* Query Tablet */
 @media screen and (min-width: 766px) and (max-width: 1023px) {
     section.Albums {
+        section.filter {
+            .custom-select {
+                background-color: var.$sec;
+                width: 50%;
+                color: var.$white;
+            }
+        }
         section.content {
             justify-content: space-between;
         }

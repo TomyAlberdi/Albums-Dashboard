@@ -1,15 +1,27 @@
 import React, { useEffect, useState } from 'react'
 import Album from '../utils/Album'
+import Select from 'react-select';
 
 const Albums = ({BASE_URL,API_KEY}) => {
     
     const METHOD = "?method=user.gettopalbums&user=tomyalberdi"
-    const [Period, setPeriod] = useState("1month")
+
+    const options = [
+        { value: '7day', label: 'Past 7 days'},
+        { value: '1month', label: 'Past month'},
+        { value: '3month', label: 'Past 3 months'},
+        { value: '6month', label: 'Past 6 months'},
+        { value: '12month', label: 'Past year'},
+        { value: 'overall', label: 'All Time'},
+    ]
+
+    const [Period, setPeriod] = useState(options[0])
+
     const [Data, setData] = useState()
     const [LoadingData, setLoadingData] = useState(true)
     useEffect(() => {
         const fetchData = async () => {
-            let url = `${BASE_URL}/${METHOD}&${API_KEY}&format=json&period=${Period}&limit=48`
+            let url = `${BASE_URL}/${METHOD}&${API_KEY}&format=json&period=${Period.value}&limit=48`
             fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -19,22 +31,50 @@ const Albums = ({BASE_URL,API_KEY}) => {
         }
         fetchData()
     }, [LoadingData,Period])
-
-    const changePeriod = () => {
-        setPeriod(document.querySelector("#period").value)
-    }
     
     return (
         <section className='Albums'>
             <section className="filter">
-                <select name="period" id="period" defaultValue="1month" onChange={changePeriod}>
-                    <option value="7day">Past 7 days</option>
-                    <option value="1month">Past month</option>
-                    <option value="3month">Past 3 months</option>
-                    <option value="6month">Past 6 months</option>
-                    <option value="12month">Past year</option>
-                    <option value="overall">All Time</option>
-                </select>
+                <Select
+                    defaultValue={Period}
+                    onChange={setPeriod}
+                    options={options}
+                    isSearchable={false}
+                    className='custom-select'
+                    styles={{
+                        control: (baseStyles) => ({
+                            ...baseStyles,
+                            cursor: 'pointer',
+                            backgroundColor: '#903749',
+                            border: 'none',
+                            color: '#fffcff',
+                        }),
+                        option: (styles, {isFocused}) => {
+                            return {
+                                ...styles,
+                                cursor: 'pointer',
+                                color: '#fffcff',
+                                height: 'fit-content',
+                                backgroundColor: isFocused
+                                ? '#E84545'
+                                : '#903749'
+                            }
+                        },
+                        input: (styles) => ({
+                            ...styles,
+                            border: 'none',
+                            borderRadius: '5px',
+                        }),
+                        placeholder: (styles) => ({
+                            ...styles,
+                            color: '#fffcff'
+                        }),
+                        singleValue: (styles) => ({
+                            ...styles,
+                            color: '#fffcff'
+                        }),
+                    }}
+                />
             </section>
             <section className="content">
                 {
