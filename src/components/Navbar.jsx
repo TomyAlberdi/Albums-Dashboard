@@ -18,7 +18,7 @@ const Navbar = () => {
                 <i className="fa-solid fa-chevron-up"></i>
             </section>
             <div className='iconContainer'>
-                <Link to={'http://tomas-alberdi.com'} target={'_blank'}><img src="/favicon.ico" alt="Project Icon" /></Link>
+                <Link to={'http://tomas-alberdi.com'} target={'_blank'}><img src="/Albums-Dashboard/favicon.ico" alt="Project Icon" /></Link>
             </div>
         </header>
     )
