@@ -6,7 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
 
-    let BASE_URL = "http://ws.audioscrobbler.com/2.0"
+    let BASE_URL = "https://ws.audioscrobbler.com/2.0"
     let API_KEY = "api_key=c360d63db0da100b508415c5bd8197fe"
 
     return (
