@@ -1,8 +1,15 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const Album = ({data}) => {
+
+    const navigate = useNavigate()
+    const openAlbum = () => {
+        navigate("/Albums-Dashboard/Album-Details",{state:{data:data}})
+    }
+
     return (
-        <article className="Album">
+        <article className="Album" onClick={openAlbum}>
             <section className="img">
                 {
                     data.image[3]["#text"].length > 0 ? 

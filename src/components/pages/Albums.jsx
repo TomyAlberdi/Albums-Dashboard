@@ -2,36 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Album from '../utils/Album'
 import Select from 'react-select';
 
-const Albums = ({BASE_URL,API_KEY}) => {
-    
-    const METHOD = "?method=user.gettopalbums&user=tomyalberdi"
-
-    const options = [
-        { value: '7day', label: 'Past 7 days'},
-        { value: '1month', label: 'Past month'},
-        { value: '3month', label: 'Past 3 months'},
-        { value: '6month', label: 'Past 6 months'},
-        { value: '12month', label: 'Past year'},
-        { value: 'overall', label: 'All Time'},
-    ]
-
-    const [Period, setPeriod] = useState(options[0])
-
-    const [Data, setData] = useState()
-    const [LoadingData, setLoadingData] = useState(true)
-    useEffect(() => {
-        const fetchData = async () => {
-            let url = `${BASE_URL}/${METHOD}&${API_KEY}&format=json&period=${Period.value}&limit=48`
-            fetch(url)
-            .then(res => res.json())
-            .then(data => {
-                setData(data.topalbums.album)
-                setLoadingData(false)
-            })
-        }
-        fetchData()
-    }, [LoadingData,Period])
-    
+const Albums = ({Data, LoadingData, Period, setPeriod, options}) => {
+       
     return (
         <section className='Albums'>
             <section className="filter">
