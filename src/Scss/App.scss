@@ -3,6 +3,7 @@
 @use "./footer";
 @use "./albums";
 @use "./utils/album";
+@use "./utils/album-details";
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap');
 
 * {
@@ -22,6 +23,17 @@ html {
             main {
                 min-height: 84vh;
                 margin-top: 11vh;
+                h2.loadingMsg {
+                    font-size: 2rem;
+                    width: 100%;
+                    text-align: center;
+                    padding: 1vh 3vh;
+                    background-color: var.$sec;
+                    box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
+                    border-radius: 5px;
+                    -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
+                    animation: animacion_loading 1.5s ease-in-out infinite both;
+                }
             }
         }
     }

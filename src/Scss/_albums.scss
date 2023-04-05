@@ -9,7 +9,7 @@ section.Albums {
             border-radius: 5px;
         }
         #react-select-3-listbox {
-            background-color: var.$sec;
+            background-color: var.$sec !important;
         }
     }
     section.content {
@@ -17,17 +17,6 @@ section.Albums {
         @include var.flex-container(row,left,center);
         flex-wrap: wrap;
         gap: 1%;
-        h2.loadingMsg {
-            font-size: 2rem;
-            width: 100%;
-            text-align: center;
-            padding: 1vh 3vh;
-            background-color: var.$sec;
-            box-shadow: 0px 4px 4px 0px rgb(28, 28, 28);
-            border-radius: 5px;
-            -webkit-animation: animacion_loading 1.5s ease-in-out infinite both;
-            animation: animacion_loading 1.5s ease-in-out infinite both;
-        }
     }
 }
 

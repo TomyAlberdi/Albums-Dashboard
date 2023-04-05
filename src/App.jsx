@@ -54,7 +54,12 @@ function App() {
                             options={options}
                         />} 
                     />
-                    <Route path='/Albums-Dashboard/Album-Details' element={ <Album_Detail />} />
+                    <Route path='/Albums-Dashboard/Album-Details' element={ 
+                        <Album_Detail 
+                            BASE_URL={BASE_URL}
+                            API_KEY={API_KEY}
+                        />} 
+                    />
                 </Routes>
             </main>
             <Footer />
