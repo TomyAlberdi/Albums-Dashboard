@@ -14,9 +14,8 @@ article.Album_Detail {
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: repeat(8, 1fr); 
         section {
-            border: 1px solid red;
             &.img {
-                @include var.flex-container(row,center,center);
+                @include var.flex-container(row,left,center);
                 img {
                     height: 100%;
                     border-radius: 10px;

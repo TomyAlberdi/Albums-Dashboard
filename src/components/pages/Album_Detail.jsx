@@ -45,7 +45,11 @@ const Album_Detail = ({BASE_URL,API_KEY}) => {
                         <h2>{Data.artist}</h2>
                     </section>
                     <section className="div4 date">
-                        <h3><i className="fa-solid fa-calendar"></i> {Data.wiki.published.substring(0, 11)}</h3>
+                        {
+                            Data.wiki?.published ?
+                                <h3><i className="fa-solid fa-calendar"></i> {Data.wiki.published.substring(0, 11)}</h3>
+                            : <></>
+                        }
                     </section>
                     <section className="div5 tags">
                         {
@@ -85,7 +89,7 @@ const Album_Detail = ({BASE_URL,API_KEY}) => {
                         <h2>Tracks</h2>
                         <ol>
                             {
-                                Data.tracks.track.map((e,index) => {
+                                Data.tracks?.track.map((e,index) => {
                                     return <li key={index}>
                                         {e.name} - {Math.floor(e.duration/60)}:{(e.duration%60).toString().padStart(2,'0')}
                                     </li>
@@ -94,18 +98,26 @@ const Album_Detail = ({BASE_URL,API_KEY}) => {
                         </ol>
                     </section>
                     <section className="div7 playcount">
-                        <h3>
-                            <i className="fa-solid fa-hashtag"></i>
-                            <i className="fa-solid fa-play"></i>
-                            {parseInt(Data.playcount).toLocaleString('de-DE')}
-                        </h3>
+                        {
+                            Data.playcount ?
+                                <h3>
+                                    <i className="fa-solid fa-hashtag"></i>
+                                    <i className="fa-solid fa-play"></i>
+                                    {parseInt(Data.playcount).toLocaleString('de-DE')}
+                                </h3>
+                            :<></>
+                        }
                     </section>
                     <section className="div8 listeners">
-                        <h3>
-                            <i className="fa-solid fa-headphones"></i>
-                            <i className="fa-solid fa-user"></i>
-                            {parseInt(Data.listeners).toLocaleString('de-DE')}
-                        </h3>
+                        {
+                            Data.listeners ?
+                                <h3>
+                                    <i className="fa-solid fa-headphones"></i>
+                                    <i className="fa-solid fa-user"></i>
+                                    {parseInt(Data.listeners).toLocaleString('de-DE')}
+                                </h3>
+                            :<></>
+                        }
                     </section>
                 </section>
             </article>
