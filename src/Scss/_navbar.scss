@@ -10,25 +10,39 @@ header.Navbar {
     position: fixed;
     top: 0;
     width: 100%;
+    div.func {
+        @include var.flex-container(row,center,center);
+        gap: 2vw;
         section.goTop {
-        height: inherit;
-        @include var.flex-container(row,space-between,center);
-        gap: 1vh;
-        div.text {
-            @include var.flex-container(column,space-evenly,left);
-            span {
-                font-size: 1.2rem;
+            height: inherit;
+            @include var.flex-container(row,space-between,center);
+            gap: 1vh;
+            div.text {
+                @include var.flex-container(column,space-evenly,left);
+                span {
+                    font-size: 1.2rem;
+                }
+            }
+            i {
+                font-size: 3rem;
+                transition: all 0.3s ease-in-out;
+            }
+            cursor: pointer;
+            &:hover {
+                transition: all 0.3s ease-in-out;
+                i {
+                    transform: translateY(-1vh);
+                    color: var.$acc;
+                }
             }
         }
-        i {
-            font-size: 3rem;
-            transition: all 0.3s ease-in-out;
-        }
-        cursor: pointer;
-        &:hover {
-            transition: all 0.3s ease-in-out;
-            i {
-                transform: translateY(-1vh);
+        section.goBack {
+            @extend .goTop;
+            gap: 1.5vh;
+            &:hover {
+                i {
+                    transform: translateX(-1vh)
+                }
             }
         }
     }
@@ -46,6 +60,24 @@ header.Navbar {
         &:hover {
             transition: all 0.3s ease-in-out;
             background-color: rgba(0, 0, 0, 0.3);            
+        }
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    header.Navbar {
+        div.func {
+            gap: 7.5vw;
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    header.Navbar {
+        div.func {
+            gap: 5vw;
         }
     }
 }
