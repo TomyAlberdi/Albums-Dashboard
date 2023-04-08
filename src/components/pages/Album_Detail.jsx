@@ -70,40 +70,46 @@ const Album_Detail = ({BASE_URL,API_KEY}) => {
                     <section className="div5 tags">
                         {
                             Data.tags?
-                            <>
-                                {
-                                    Data.tags.tag[0]?
-                                        <h4>
-                                            <i className="fa-solid fa-tag"></i>
-                                            {Data.tags.tag[0].name}
-                                        </h4>
-                                    :<></>
-                                }
-                                {
-                                    Data.tags.tag[1]?
-                                        <h4>
-                                            <i className="fa-solid fa-tag"></i>
-                                            {Data.tags.tag[1].name}
-                                        </h4>
-                                    :<></>
-                                }
-                                {
-                                    Data.tags.tag[2]?
-                                        <h4>
-                                            <i className="fa-solid fa-tag"></i>
-                                            {Data.tags.tag[2].name}
-                                        </h4>
-                                    :<></>
-                                }
-                                {
-                                    Data.tags.tag[3]?
-                                        <h4>
-                                            <i className="fa-solid fa-tag"></i>
-                                            {Data.tags.tag[3].name}
-                                        </h4>
-                                    :<></>
-                                }
-                            </>
+                                Array.isArray(Data.tags.tag) ? 
+                                    <>
+                                        {
+                                            Data.tags.tag[0]?
+                                                <h4>
+                                                    <i className="fa-solid fa-tag"></i>
+                                                    {Data.tags.tag[0].name}
+                                                </h4>
+                                            :<></>
+                                        }
+                                        {
+                                            Data.tags.tag[1]?
+                                                <h4>
+                                                    <i className="fa-solid fa-tag"></i>
+                                                    {Data.tags.tag[1].name}
+                                                </h4>
+                                            :<></>
+                                        }
+                                        {
+                                            Data.tags.tag[2]?
+                                                <h4>
+                                                    <i className="fa-solid fa-tag"></i>
+                                                    {Data.tags.tag[2].name}
+                                                </h4>
+                                            :<></>
+                                        }
+                                        {
+                                            Data.tags.tag[3]?
+                                                <h4>
+                                                    <i className="fa-solid fa-tag"></i>
+                                                    {Data.tags.tag[3].name}
+                                                </h4>
+                                            :<></>
+                                        }
+                                    </>
+                                :
+                                <h4>
+                                    <i className="fa-solid fa-tag"></i>
+                                    {Data.tags.tag.name}
+                                </h4>
                             :
                                 <h4>
                                     <i className="fa-solid fa-tag"></i>
