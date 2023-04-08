@@ -17,7 +17,7 @@ const Albums = ({Data, LoadingData, Period, setPeriod, options}) => {
                         control: (baseStyles) => ({
                             ...baseStyles,
                             cursor: 'pointer',
-                            backgroundColor: '#903749',
+                            backgroundColor: '#642834',
                             border: 'none',
                             color: '#fffcff',
                         }),
@@ -29,7 +29,7 @@ const Albums = ({Data, LoadingData, Period, setPeriod, options}) => {
                                 height: 'fit-content',
                                 backgroundColor: isFocused
                                 ? '#E84545'
-                                : '#903749'
+                                : '#642834'
                             }
                         },
                         input: (styles) => ({
