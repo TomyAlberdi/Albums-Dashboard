@@ -7,3 +7,6 @@ Albums-Dashborad is a personal project built with React and Sass. It works as a 
 * This project is fully responsive in mobile and tablet screens.
 * A working demo is deployed with GitHub Pages [here](https://tomyalberdi.github.io/Albums-Dashboard/)
 * The `build` and `deploy` processes are handled automatically with a YAML file located in the `.github/workflows` directory.
+
+## License
+This project is licensed under the MIT License.
