@@ -12,14 +12,7 @@ function App() {
     let API_KEY = "api_key=c360d63db0da100b508415c5bd8197fe"
     const METHOD = "?method=user.gettopalbums&user=tomyalberdi"
 
-    const options = [
-        { value: '7day', label: 'Past 7 days'},
-        { value: '1month', label: 'Past month'},
-        { value: '3month', label: 'Past 3 months'},
-        { value: '6month', label: 'Past 6 months'},
-        { value: '12month', label: 'Past year'},
-        { value: 'overall', label: 'All Time'},
-    ]
+    const options = ['7day','1month','3month','6month','12month','overall']
 
     const [Period, setPeriod] = useState(options[0])
 
@@ -27,7 +20,7 @@ function App() {
     const [LoadingData, setLoadingData] = useState(true)
     useEffect(() => {
         const fetchData = async () => {
-            let url = `${BASE_URL}/${METHOD}&${API_KEY}&format=json&period=${Period.value}&limit=48`
+            let url = `${BASE_URL}/${METHOD}&${API_KEY}&format=json&period=${Period}&limit=48`
             fetch(url)
             .then(res => res.json())
             .then(data => {

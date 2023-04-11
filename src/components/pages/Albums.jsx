@@ -1,52 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import Album from '../utils/Album'
-import Select from 'react-select';
 
 const Albums = ({Data, LoadingData, Period, setPeriod, options}) => {
-       
+    
+    const handlePeriodChange = (e) => {
+        setPeriod(e.currentTarget.id)
+    }
+
     return (
         <section className='Albums'>
             <section className="filter">
-                <Select
-                    defaultValue={Period}
-                    onChange={setPeriod}
-                    options={options}
-                    isSearchable={false}
-                    className='custom-select'
-                    styles={{
-                        control: (baseStyles) => ({
-                            ...baseStyles,
-                            cursor: 'pointer',
-                            backgroundColor: '#642834',
-                            border: 'none',
-                            color: '#fffcff',
-                        }),
-                        option: (styles, {isFocused}) => {
-                            return {
-                                ...styles,
-                                cursor: 'pointer',
-                                color: '#fffcff',
-                                height: 'fit-content',
-                                backgroundColor: isFocused
-                                ? '#E84545'
-                                : '#642834'
-                            }
-                        },
-                        input: (styles) => ({
-                            ...styles,
-                            border: 'none',
-                            borderRadius: '5px',
-                        }),
-                        placeholder: (styles) => ({
-                            ...styles,
-                            color: '#fffcff'
-                        }),
-                        singleValue: (styles) => ({
-                            ...styles,
-                            color: '#fffcff'
-                        }),
-                    }}
-                />
+                <button id={options[0]} onClick={handlePeriodChange} className={Period === options[0] ? "selected" : ""}>Past 7 days</button>
+                <button id={options[1]} onClick={handlePeriodChange} className={Period === options[1] ? "selected" : ""}>Past month</button>
+                <button id={options[2]} onClick={handlePeriodChange} className={Period === options[2] ? "selected" : ""}>Past 3 months</button>
+                <button id={options[3]} onClick={handlePeriodChange} className={Period === options[3] ? "selected" : ""}>Past 6 months</button>
+                <button id={options[4]} onClick={handlePeriodChange} className={Period === options[4] ? "selected" : ""}>Past Year</button>
+                <button id={options[5]} onClick={handlePeriodChange} className={Period === options[5] ? "selected" : ""}>All Time</button>
             </section>
             <section className="content">
                 {

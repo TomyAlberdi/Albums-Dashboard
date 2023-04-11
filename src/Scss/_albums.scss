@@ -3,13 +3,27 @@
 section.Albums {
     min-height: inherit;
     section.filter {
-        padding: 3vh 3vh 0 3vh;
-        .custom-select {
-            width: 30%;
-            border-radius: 5px;
-        }
-        #react-select-3-listbox {
-            background-color: var.$sec !important;
+        padding: 2vh 3vh 0 3vh;
+        @include var.flex-container(row,left,center);
+        flex-wrap: wrap;
+        button {
+            padding: 2vh;
+            margin: 1vh;
+            font-size: 1rem;
+            background-color: rgba(100, 40, 52, 0.7);
+            border: 1px solid rgba(100, 40, 52, 0.7);
+            box-shadow: 0px 6px 6px 0px rgb(0, 0, 0, 0.4);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s all ease-in-out;
+            &:hover {
+                transition: 0.3s all ease-in-out;
+                transform: translateY(-10%);
+            }
+            &.selected {
+                background-color: var.$sec;
+                border-color: var.$acc;
+            }
         }
     }
     section.content {
@@ -24,10 +38,8 @@ section.Albums {
 @media screen and (max-width: 765px) {
     section.Albums {
         section.filter {
-            .custom-select {
-                background-color: var.$sec;
-                width: 100%;
-                color: var.$white;
+            button {
+                width: 45%;
             }
         }
         section.content {
