@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Album from '../utils/Album'
+import Skeleton from '@mui/material/Skeleton';
 
 const Albums = ({Data, LoadingData, Period, setPeriod, options}) => {
     
@@ -19,11 +20,15 @@ const Albums = ({Data, LoadingData, Period, setPeriod, options}) => {
             </section>
             <section className="content">
                 {
-                    LoadingData ? <h2 className="loadingMsg">Loading Albums</h2> :
-                    Data.length > 0 ?
-                        Data.map((e,index) => {
-                            return <Album key={index} data={e} />
+                    LoadingData ? 
+                        [...Array(14)].map((index) => {
+                            return <Skeleton key={index} variant='rectangular' animation="wave" />
                         })
+                    :
+                        Data.length > 0 ?
+                            Data.map((e,index) => {
+                                return <Album key={index} data={e} />
+                            })
                     : <h2 className="loadingMsg">No Albums to Load</h2>
                 }
             </section>

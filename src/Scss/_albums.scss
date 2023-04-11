@@ -31,6 +31,12 @@ section.Albums {
         @include var.flex-container(row,left,center);
         flex-wrap: wrap;
         gap: 1%;
+        .MuiSkeleton-root {
+            border-radius: 10px;
+            margin-bottom: 2vh;
+            width: 13.4%;
+            height: 34vh;
+        }
     }
 }
 
@@ -44,6 +50,10 @@ section.Albums {
         }
         section.content {
             justify-content: space-between;
+            .MuiSkeleton-root {
+                width: 47%;
+                height: 28vh;
+            }
         }
     }
 }
@@ -60,6 +70,10 @@ section.Albums {
         }
         section.content {
             justify-content: space-between;
+            .MuiSkeleton-root {
+                width: 31.5%;
+                height: 27vh;
+            }
         }
     }
 }
