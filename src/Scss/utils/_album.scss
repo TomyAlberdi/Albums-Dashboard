@@ -3,22 +3,24 @@
 article.Album {
     cursor: pointer;
     margin: 0 0 2vh 0;
-    height: 39vh;
+    height: 34vh;
     border-radius: 10px;
-    width: 15.8%;
-    background-color: var.$sec;
+    width: 13.4%;
+    background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0px 6px 6px 0px rgb(0, 0, 0, 0.4);
     transition: 0.3s all ease-in-out;
     &:hover {
         transition: 0.3s all ease-in-out;
         transform: translateY(-3%);
+        background-color: rgba(100, 40, 52, 0.7);
     }
     section.img {
-        height: 82%;
+        height: 76%;
         width: 100%;
+        @include var.flex-container(row,center,center);
         img {
-            width: inherit;
-            height: 100%;
+            width: 90%;
+            height: 90%;
             border-radius: 10px;
             object-fit: cover;
         }
@@ -28,7 +30,6 @@ article.Album {
         height: 18%;
         padding: 2% 4%;
         h2,h3 {
-            width: 100%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -48,7 +49,7 @@ article.Album {
 /* Query Mobile */
 @media screen and (max-width: 765px) {
     article.Album {
-        height: 26vh;
+        height: 28vh;
         width: 47%;
         section.img {
             height: 76%;
