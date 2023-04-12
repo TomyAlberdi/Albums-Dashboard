@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import Skeleton from '@mui/material/Skeleton';
 
 const Album_Detail = ({BASE_URL,API_KEY}) => {
 
@@ -27,7 +28,14 @@ const Album_Detail = ({BASE_URL,API_KEY}) => {
         return (
             <article className="Album_Detail">
                 <section className="content">
-                    <h2 className='loadingMsg'>Cargando Álbum</h2>
+                    <Skeleton variant='rectangular' animation="wave" className='div1' />
+                    <Skeleton variant='rectangular' animation="wave" className='div2' />
+                    <Skeleton variant='rectangular' animation="wave" className='div3' />
+                    <Skeleton variant='rectangular' animation="wave" className='div4' />
+                    <Skeleton variant='rectangular' animation="wave" className='div5' />
+                    <Skeleton variant='rectangular' animation="wave" className='div6' />
+                    <Skeleton variant='rectangular' animation="wave" className='div7' />
+                    <Skeleton variant='rectangular' animation="wave" className='div8' />
                 </section>
             </article>
         )

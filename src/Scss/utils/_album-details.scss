@@ -104,6 +104,19 @@ article.Album_Detail {
             grid-area: 5 / 1 / 6 / 2; 
             @include var.flex-container(row,center,center);
         } 
+        .MuiSkeleton-root {
+            height: auto;
+            width: 96%;
+            margin: 1vh;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.2);
+            &.div2 {
+                height: 80%;
+            }
+            &.div6 {
+                overflow: hidden;
+            }
+        }
     }
 }
 
@@ -155,6 +168,10 @@ article.Album_Detail {
             .div8 { 
                 grid-area: 7 / 1 / 8 / 3; 
             } 
+            .MuiSkeleton-root {
+                margin: 1vh 0;
+                justify-self: center;
+            }
         }
     }
 }
@@ -172,7 +189,7 @@ article.Album_Detail {
                 grid-area: 1 / 1 / 4 / 3; 
                 img {
                     height: 100%;
-                    width: unset;
+                    object-fit: contain;
                 }
             }
             .div2 {
